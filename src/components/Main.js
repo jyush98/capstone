@@ -1,8 +1,8 @@
-import HeroImage from "./assets/heroimage.jpg"
-import GreekSaladImg from "./assets/greeksalad.jpg"
-import BruschettaImg from "./assets/bruchetta.svg"
-import LemonDessertImg from "./assets/lemondessert.jpg"
-import HomeImg from "./assets/home icon.svg"
+import HeroImage from "./../assets/heroimage.jpg"
+import GreekSaladImg from "./../assets/greeksalad.jpg"
+import BruschettaImg from "./../assets/bruchetta.svg"
+import LemonDessertImg from "./../assets/lemondessert.jpg"
+import HomeImg from "./../assets/home icon.svg"
 
 function Main() {
     return (

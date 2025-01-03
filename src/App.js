@@ -1,6 +1,6 @@
 import './App.css';
-import HomePage from './HomePage';
-import BookingPage from './BookingPage';
+import HomePage from './components/HomePage';
+import BookingPage from './components/BookingPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ComingSoonPage from './components/ComingSoonPage';
 

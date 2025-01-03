@@ -1,20 +1,16 @@
-import GreenLogo from "./assets/greenlogo.png"
+import GreenLogo from "./../assets/greenlogo.png"
+import NavLinks from "./NavLinks";
 
 function Footer() {
+    const socialMediaSites = ["TikTok", "Instagram", "Facebook", "Youtube", "Resy", "Beli"]
+
     return (
         <footer className="footer">
             <img className="footer-info" src={GreenLogo} alt="logo"/>
             <div className="footer-info">
                 <h4>Links</h4>
                 <nav className="nav-content-footer">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/coming-soon">About</a></li>
-                        <li><a href="/coming-soon">Menu</a></li>
-                        <li><a href="/book">Reservations</a></li>
-                        <li><a href="/coming-soon">Order Online</a></li>
-                        <li><a href="/coming-soon">Login</a></li>
-                    </ul>
+                    <NavLinks/>
                 </nav>
             </div>
             <div className="footer-info">
@@ -31,12 +27,11 @@ function Footer() {
                 <h4>Social Media</h4>
                 <nav className="nav-content-footer">
                     <ul>
-                        <li><a href="/coming-soon">TikTok</a></li>
-                        <li><a href="/coming-soon">Instagram</a></li>
-                        <li><a href="/coming-soon">Facebook</a></li>
-                        <li><a href="/coming-soon">Youtube</a></li>
-                        <li><a href="/coming-soon">Resy</a></li>
-                        <li><a href="/coming-soon">Beli</a></li>
+                        {
+                            socialMediaSites.map(site => (
+                                <li key={site}><a href="/coming-soon">{site}</a></li>
+                            ))
+                        }
                     </ul>
                 </nav>
             </div>
