@@ -90,6 +90,7 @@ a {
 .hero h3 {
   font-size: 1.5rem;
   margin-bottom: -20px;
+  padding: 0px;
   font-family: "Markazi", serif;
 }
 
@@ -119,14 +120,28 @@ button {
 }
 
 .footer {
-  background-color: #495E57;
-  color: white;
+  display: flex; /* Arrange children side by side */
+  justify-content: flex-start; /* Align children to the left */
+  align-items: flex-start; /* Align items to the top */
+  padding: 20px; /* Add padding for spacing */
+  background-color: #495E57; /* Background color for the footer */
+  color: white; /* Text color */
+  gap: 20px; /* Add space between the logo, links, and contact info */
+}
+
+.footer-logo img {
+  width: 50px; /* Set a consistent size for the logo */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .footer-info {
   display: inline-block;
   margin: 10px;
   padding-left: 20px;
+}
+
+h4 {
+  padding: 0px;
 }
 
 .header {
@@ -182,15 +197,36 @@ button {
   padding: 0;
 }
 
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 .nav-content li {
   display: inline-block; /* Keep the items in a row */
   margin-right: 20px;
+}
+
+.footer nav {
+  padding: 0px;
+  margin-top: -15px;
 }
 
 .nav-content a {
   text-decoration: none;
   color: #000000;
   font-size: smaller;
+}
+
+.nav-content-footer a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: smaller;
+}
+
+.nav-content-footer a:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .nav-content a:hover {
