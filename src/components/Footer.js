@@ -14,16 +14,6 @@ function Footer() {
                 </nav>
             </div>
             <div className="footer-info">
-                <h4>Contact Information</h4>
-                <div className="footer-contact-info">
-                    <ul>
-                        <li>(123)-456-7890</li>
-                        <li>littlelemon@gmail.com</li>
-                        <li>123 45th St <br/> New York, NY 12345</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="footer-info">
                 <h4>Social Media</h4>
                 <nav className="nav-content-footer">
                     <ul>
@@ -34,6 +24,16 @@ function Footer() {
                         }
                     </ul>
                 </nav>
+            </div>
+            <div className="footer-info">
+                <h4>Contact Information</h4>
+                <div className="footer-contact-info">
+                    <ul>
+                        <li>(123)-456-7890</li>
+                        <li>littlelemon@gmail.com</li>
+                        <li>123 45th St <br/> New York, NY 12345</li>
+                    </ul>
+                </div>
             </div>
         </footer>
     );

@@ -1,3 +1,4 @@
+import './hero.css';
 import HeroImage from "./../../assets/heroimage.jpg"
 
 function HeroMainContent() {

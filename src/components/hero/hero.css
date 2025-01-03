@@ -1,0 +1,43 @@
+.hero {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Vertically align items */
+    padding: 50px 20px;
+    background-color: #495E57;
+    color: white;
+    text-align: left; /* Align text to the left */
+    gap: 20px; /* Space between text and image */
+  }
+
+.hero-text {
+    max-width: 20%; /* Limit the width of the text */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: -50px;
+    color: #F4CE14;
+    font-family: "Markazi", serif;
+  }
+
+  .hero h3 {
+    font-size: 1.5rem;
+    margin-bottom: -20px;
+    padding: 0px;
+    font-family: "Markazi", serif;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .hero-image {
+    max-width: 30%; /* Adjust the width of the image */
+  }
+
+  .hero-image img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+  }

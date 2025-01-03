@@ -9,15 +9,15 @@ import ComingSoonPage from './components/ComingSoonPage';
 function App() {
   return (
     <div className="container">
-      <Header />
       <Router>
+      <Header />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/book" element={<BookingPage />}></Route>
           <Route path="/coming-soon" element={<ComingSoonPage />}></Route>
         </Routes>
-      </Router>
       <Footer />
+      </Router>
     </div>
 
   );

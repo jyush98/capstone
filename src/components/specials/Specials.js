@@ -1,3 +1,4 @@
+import "./specials.css"
 import SpecialsHeader from "./SpecialsHeader";
 import SpecialsList from "./SpecialsList";
 

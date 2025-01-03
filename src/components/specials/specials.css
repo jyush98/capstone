@@ -1,0 +1,83 @@
+.specials h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .specials-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes items to opposite ends */
+    padding: 0 80px;
+    margin: 0;
+  }
+
+  .online-menu {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .specials-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 0 100px;
+  }
+
+  .special-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes items to opposite ends */
+  }
+
+  .special-item {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Push elements to top and bottom */
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    height: 100%; /* Ensure it takes consistent height */
+  }
+
+  .special-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .special-item p, h3 {
+    padding: 0 20px;
+  }
+
+  .special-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .special-item p {
+    font-size: 1rem;
+    color:#495E57;
+  }
+
+  .special-item-header p {
+    color: #EE9972;
+  }
+
+  .delivery-line {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
+
+  .delivery-line img {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .delivery-line p {
+    margin: 0;
+  }
