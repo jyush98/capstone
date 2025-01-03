@@ -1,14 +1,14 @@
-import Header from './Header';
-import Nav from './Nav';
-import Footer from './Footer';
+
 
 function BookingPage() {
   return (
-    <div className="container">
-      <Header/>
-      <Nav/>
-      <Footer/>
-    </div>
+    <main className="main-content">
+      <section className="hero">
+        <div className="hero-text">
+          <h1>Book Here!</h1>
+        </div>
+      </section>
+    </main>
   );
 }
 

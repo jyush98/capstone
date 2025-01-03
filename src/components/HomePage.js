@@ -5,12 +5,7 @@ import Footer from './Footer';
 
 function HomePage() {
   return (
-    <div className="container">
-      <Header/>
-      <Nav/>
-      <Main/>
-      <Footer/>
-    </div>
+    <Main/>
   );
 }
 
