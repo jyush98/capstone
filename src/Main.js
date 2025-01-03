@@ -15,7 +15,7 @@ function Main() {
                     <button className="lemon-button">Reserve a Table</button>
                 </div>
                 <div className="hero-image">
-                    <img src={HeroImage} alt="Restaurant Image" />
+                    <img src={HeroImage} alt="Restaurant" />
                 </div>
             </section>
 

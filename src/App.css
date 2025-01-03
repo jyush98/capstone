@@ -144,7 +144,7 @@ h4 {
   font-size: smaller;
 }
 
-.nav-content-footer a {
+.nav-content-footer a, li {
   text-decoration: none;
   color: #ffffff;
   font-size: smaller;
