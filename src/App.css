@@ -110,11 +110,11 @@ h4 {
   justify-content: flex-end;
   align-items: center;
   padding: 16px;
-  grid-column: span 4;
+  grid-column: span 5;
 }
 
 .nav-content {
-  grid-column: span 8;
+  grid-column: span 7;
 }
 
 /* Nav Styling */
@@ -219,6 +219,7 @@ h4 {
 .delivery-line {
   display: flex;
   margin-top: auto;
+  margin-bottom: 10px;
 }
 
 .delivery-line img {
