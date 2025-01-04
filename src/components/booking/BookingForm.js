@@ -14,15 +14,15 @@ function BookingForm({
     // Handle form submission (for now, just log the state)
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Reservation Details:', { resDate, resTime, guests, occasion });
-    };
+        console.log("Reservation Details:", { resDate, resTime, guests, occasion });
+      };
 
     const handleDateChange = (e) => {
         updateTimes(e.target.value);  // Dispatch action to update available times based on date
       };
 
     return (
-        <form onSubmit={handleSubmit} style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}>
+        <form onSubmit={handleSubmit} style={{ display: 'grid', maxWidth: '200px', gap: '20px' }} data-testid="booking-form">
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" value={resDate} onChange={handleDateChange} />
             <label htmlFor="res-time">Choose time</label>
@@ -37,7 +37,7 @@ function BookingForm({
             <input type="number" placeholder="1" min="1" max="10" id="guests"
                 value={guests} onChange={(e) => setGuests(e.target.value)} />
             <label htmlFor="occasion">Occasion</label>
-            <select id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
+            <select id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)} data-testid="occasion-test">
                 {
                     occasions.map(occasion => (
                         <option key={occasion}>{occasion}</option>
