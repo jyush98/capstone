@@ -1,10 +1,10 @@
-import HeroMainContent from "./hero/HeroMainPage";
+import HeroMainPage from "./hero/HeroMainPage";
 import Specials from "./specials/Specials";
 
 function Main() {
     return (
         <main className="main-content">
-            <HeroMainContent/>
+            <HeroMainPage/>
             <Specials/>
         </main>
     );
