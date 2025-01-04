@@ -9,30 +9,28 @@ test('Renders the BookingForm heading or label for "Choose date"', () => {
 });
 
 test('initializeTimes returns the correct available times', () => {
-  const initializeTimes = () => {
-    return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-  };
-
-  const times = initializeTimes();
-
-  expect(times).toEqual(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
+  const mockFetchAPI = jest.fn().mockResolvedValue(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
+  return mockFetchAPI().then(times => {
+    expect(times).toEqual(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
+  });
 });
 
-test('updateTimes updates the available times correctly', () => {
-  // This is a simplified version of the updateTimes function from BookingPage
-  const updateTimes = (date) => {
-    return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];  // You can add more logic here as needed
+test('updateTimes updates the available times correctly', async () => {
+  // Mock fetchAPI return value
+  const mockFetchAPI = jest.fn().mockResolvedValue(['17:00', '18:00']);
+
+  // Simulated updateTimes function that uses mockFetchAPI
+  const updateTimes = async (date) => {
+    return mockFetchAPI(date);  // Simulate fetching available times based on the date
   };
 
-  const updatedTimes = updateTimes('2025-01-01');  // Simulate date change
-
-  expect(updatedTimes).toEqual(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
+  const updatedTimes = await updateTimes('2025-01-01');  // Simulate date change
+  expect(updatedTimes).toEqual(['17:00', '18:00']);
 });
 
 test('setOccasion is called with the correct value when occasion is changed', () => {
     // Mock the setOccasion function
     const mockSetOccasion = jest.fn();
-  
     // Render the BookingForm with the mock function for setOccasion
     render(
       <BookingForm
@@ -67,6 +65,7 @@ test('Allows a user to submit the form', () => {
     const mockSetGuests = jest.fn();
     const mockSetOccasion = jest.fn();
     const mockUpdateTimes = jest.fn();
+    const mockSubmitAPI = jest.fn().mockReturnValue(true);
 
     // Render the BookingForm component with mock functions
     render(
@@ -82,6 +81,7 @@ test('Allows a user to submit the form', () => {
         availableTimes={['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']}
         occasions={['Birthday', 'Anniversary', 'Engagement']}
         updateTimes={mockUpdateTimes}
+        submitAPI={mockSubmitAPI}
       />
     );
 
@@ -99,7 +99,7 @@ test('Allows a user to submit the form', () => {
     expect(console.log).toHaveBeenCalledTimes(1);
 
     // Assert that console.log was called and check the reservation details logged
-    expect(console.log).toHaveBeenCalledWith('Reservation Details:', {
+    expect(console.log).toHaveBeenCalledWith('Reservation submitted successfully:', {
       resDate: '2025-01-01',
       resTime: '18:00',
       guests: 3,
