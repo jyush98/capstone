@@ -7,14 +7,23 @@ function BookingForm({
     occasion, setOccasion,
     availableTimes,
     occasions,
-    updateTimes
+    updateTimes,
+    submitAPI
   }) {
 
 
     // Handle form submission (for now, just log the state)
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Reservation Details:", { resDate, resTime, guests, occasion });
+        // Collecting the form data
+        const formData = { resDate, resTime, guests, occasion };
+        // Call submitAPI to simulate form submission
+        const submissionSuccess = submitAPI(formData);
+        if (submissionSuccess) {
+          console.log("Reservation submitted successfully:", formData);
+        } else {
+          console.error("Error submitting reservation");
+        }
       };
 
     const handleDateChange = (e) => {

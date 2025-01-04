@@ -1,43 +1,50 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 import BookingForm from './BookingForm';
+import { fetchAPI, submitAPI } from './../../utils/api'; // Import the functions
 
-// Initial state for availableTimes
 const initializeTimes = () => {
-  return [
-    '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-  ];
+  return [];
 };
 
-// Reducer function to update available times
 const timeReducer = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
-      // For now, we return the same available times regardless of the date
-      return [
-        '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-      ];
+      return action.times;
     default:
       return state;
   }
 };
 
 function BookingPage() {
-  // Define state in BookingPage
   const [resDate, setResDate] = useState('');
   const [resTime, setResTime] = useState('');
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
-
-  // Define available times using useReducer
   const [availableTimes, dispatch] = useReducer(timeReducer, [], initializeTimes);
 
-  // Function to update available times based on selected date
-  const updateTimes = (date) => {
-    setResDate(date);
-    dispatch({ type: 'UPDATE_TIMES', date });
+  // Function to fetch available times
+  const fetchAvailableTimes = async (date) => {
+    try {
+      // Ensure date is a valid Date object
+      const validDate = new Date(date); // Convert to Date if it's not already
+
+      const times = fetchAPI(validDate); // Pass the Date object to fetchAPI
+      dispatch({ type: 'UPDATE_TIMES', times });
+    } catch (error) {
+      console.error('Error fetching available times:', error);
+    }
   };
 
-  // Define available times
+  useEffect(() => {
+    const today = new Date();
+    fetchAvailableTimes(today); // Fetch times for today
+  }, []);
+
+  const updateTimes = (date) => {
+    setResDate(date);
+    fetchAvailableTimes(date); // Fetch available times for the selected date
+  };
+
   const occasions = ['Birthday', 'Anniversary', 'Engagement'];
 
   return (
@@ -55,6 +62,7 @@ function BookingPage() {
           availableTimes={availableTimes}
           occasions={occasions}
           updateTimes={updateTimes}
+          submitAPI={submitAPI}
         />
       </section>
     </main>
