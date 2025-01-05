@@ -116,6 +116,17 @@ h4 {
   cursor: pointer;
 }
 
+.error {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.button-disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+
 /* For mobile devices (max-width: 768px) */
 @media (max-width: 1024px) {
   .container {
