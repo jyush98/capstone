@@ -59,7 +59,7 @@ function BookingPage() {
           setGuests={setGuests}
           occasion={occasion}
           setOccasion={setOccasion}
-          availableTimes={availableTimes}
+          availableTimes={["--", ...availableTimes]}
           occasions={occasions}
           updateTimes={updateTimes}
           submitAPI={submitAPI}

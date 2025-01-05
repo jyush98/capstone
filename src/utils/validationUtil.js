@@ -19,5 +19,9 @@ export const validate = (values) => {
         errors.occasion = "Occasion is required";
     }
 
+    if (values.resTime=="--") {
+        errors.resTime = "Please select a valid time"
+    }
+
     return errors;
 };
